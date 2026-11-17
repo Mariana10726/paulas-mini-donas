@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff9f5">
+    <title>Administración — Paula's Mini Donas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+  </head>
+  <body class="admin-body">
+    <main class="login-screen" id="login-screen">
+      <section class="login-card" aria-labelledby="login-title">
+        <a class="admin-brand" href="index.html" aria-label="Paula's Mini Donas, volver a la tienda">
+          <img src="img/logo.jpeg" alt="">
+          <span><strong>Paula's</strong><small>MINI DONAS</small></span>
+        </a>
+        <span class="eyebrow">Espacio privado</span>
+        <h1 id="login-title">Hola, Paula</h1>
+        <p class="login-intro">Ingresa para gestionar tu dulce negocio.</p>
+        <form id="login-form">
+          <label class="field">Usuario
+            <input name="username" autocomplete="username" placeholder="Tu usuario" required>
+          </label>
+          <label class="field">Contraseña
+            <input name="password" type="password" autocomplete="current-password" placeholder="••••••••" required>
+          </label>
+          <p class="login-error" id="login-error" role="alert" hidden></p>
+          <button class="primary-button login-submit" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3"></path></svg>
+            Iniciar sesión
+          </button>
+        </form>
+        <p class="login-demo" id="login-hint"></p>
+        <p class="demo-warning">Este panel guarda sus datos en este navegador; no es autenticación segura para producción.</p>
+      </section>
+    </main>
+
+    <div class="admin-shell" id="admin-app" hidden>
+      <aside class="admin-sidebar">
+        <a class="admin-brand" href="index.html" aria-label="Paula's Mini Donas, volver a la tienda">
+          <img src="img/logo.jpeg" alt="">
+          <span><strong>Paula's</strong><small>MINI DONAS</small></span>
+        </a>
+        <nav class="admin-nav" aria-label="Administración">
+          <button type="button" class="nav-item" data-view="orders">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"></path><path d="M3 8v9l9 5 9-5V8M12 13v9"></path></svg>
+            Pedidos
+          </button>
+          <button type="button" class="nav-item is-active" data-view="products" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18l-2-6H5l-2 6ZM4 10v10h16V10M9 20v-6h6v6"></path><path d="M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"></path></svg>
+            Productos
+          </button>
+          <button type="button" class="nav-item" data-view="admins">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0M17 8h5M19.5 5.5v5"></path></svg>
+            Administradores
+          </button>
+        </nav>
+        <div class="sidebar-bottom">
+          <a class="sidebar-link" href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
+            Ver tienda
+          </a>
+          <button class="sidebar-link" type="button" id="logout-button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"></path></svg>
+            Cerrar sesión
+          </button>
+        </div>
+      </aside>
+
+      <main class="admin-main">
+        <header class="page-heading">
+          <div>
+            <span class="eyebrow">Panel de administración</span>
+            <h1 id="page-title">Productos</h1>
+          </div>
+          <button class="primary-button new-product-button" id="new-product-button" type="button">
+            <span aria-hidden="true">＋</span> Nuevo producto
+          </button>
+          <button class="primary-button new-product-button" id="new-admin-button" type="button" hidden>
+            <span aria-hidden="true">＋</span> Nuevo administrador
+          </button>
+        </header>
+
+        <section class="stats-grid" aria-label="Resumen del negocio">
+          <article class="stat-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"></path><path d="M3 8v9l9 5 9-5V8M12 13v9"></path></svg>
+            <strong data-stat="orders">0</strong><span>Pedidos</span>
+          </article>
+          <article class="stat-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+            <strong data-stat="pending">0</strong><span>Pendientes</span>
+          </article>
+          <article class="stat-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3ZM19 16l1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1 1-2.5Z"></path></svg>
+            <strong data-stat="preparing">0</strong><span>En preparación</span>
+          </article>
+          <article class="stat-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8Z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>
+            <strong data-stat="products">0</strong><span>Productos activos</span>
+          </article>
+        </section>
+
+        <section class="admin-view" id="products-view" aria-labelledby="page-title">
+          <div class="products-table-wrap">
+            <table class="products-table">
+              <thead><tr><th>Producto</th><th>Precio</th><th>Disponible</th><th>Acciones</th></tr></thead>
+              <tbody id="products-list"></tbody>
+            </table>
+          </div>
+          <p class="view-empty" id="products-empty" hidden>No hay productos todavía. Agrega el primero con “Nuevo producto”.</p>
+        </section>
+
+        <section class="admin-view" id="orders-view" aria-labelledby="page-title" hidden>
+          <div class="order-filters" role="group" aria-label="Filtrar pedidos">
+            <button type="button" class="filter-button is-selected" data-order-filter="all" aria-pressed="true">Todos</button>
+            <button type="button" class="filter-button" data-order-filter="pending" aria-pressed="false">Pendiente</button>
+            <button type="button" class="filter-button" data-order-filter="preparing" aria-pressed="false">En preparación</button>
+            <button type="button" class="filter-button" data-order-filter="delivered" aria-pressed="false">Entregado</button>
+            <button type="button" class="filter-button" data-order-filter="cancelled" aria-pressed="false">Cancelado</button>
+          </div>
+          <label class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
+            <span class="visually-hidden">Buscar pedido o cliente</span>
+            <input id="order-search" type="search" placeholder="Buscar pedido o cliente">
+          </label>
+          <div class="orders-list" id="orders-list" aria-live="polite"></div>
+          <p class="view-empty" id="orders-empty" hidden></p>
+        </section>
+
+        <section class="admin-view" id="admins-view" aria-labelledby="page-title" hidden>
+          <div class="admins-table-wrap">
+            <table class="admins-table">
+              <thead><tr><th>Administrador</th><th>Acciones</th></tr></thead>
+              <tbody id="admins-list"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="product-dialog" id="product-dialog">
+      <form id="product-form">
+        <div class="dialog-heading">
+          <div><span class="eyebrow">Catálogo</span><h2>Nuevo producto</h2></div>
+          <button class="dialog-close" type="button" id="close-product-dialog" aria-label="Cerrar">×</button>
+        </div>
+        <label class="field">Nombre del producto
+          <input name="name" maxlength="60" placeholder="Ej. Choco Fresa" required>
+        </label>
+        <label class="field">Sabor
+          <select name="category" required>
+            <option value="fresa">Fresa</option>
+            <option value="surtida">Surtida</option>
+            <option value="vainilla">Vainilla</option>
+            <option value="chocolate">Chocolate</option>
+          </select>
+        </label>
+        <label class="field">Descripción
+          <textarea name="description" rows="3" maxlength="180" placeholder="Describe el producto" required></textarea>
+        </label>
+        <label class="field">Precio
+          <input name="price" type="number" min="0" step="500" placeholder="15000" required>
+        </label>
+        <div class="dialog-actions">
+          <button class="secondary-button" type="button" id="cancel-product">Cancelar</button>
+          <button class="primary-button" type="submit">Guardar producto</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="product-dialog" id="new-admin-dialog">
+      <form id="new-admin-form">
+        <div class="dialog-heading">
+          <div><span class="eyebrow">Acceso al panel</span><h2>Nuevo administrador</h2></div>
+          <button class="dialog-close" type="button" data-close-dialog="new-admin-dialog" aria-label="Cerrar">×</button>
+        </div>
+        <label class="field">Usuario
+          <input name="username" minlength="3" maxlength="32" pattern="[A-Za-z0-9._]+" autocomplete="off" placeholder="Ej. paula2" required>
+        </label>
+        <label class="field">Contraseña
+          <input name="password" type="password" minlength="8" autocomplete="new-password" placeholder="Mínimo 8 caracteres" required>
+        </label>
+        <label class="field">Confirmar contraseña
+          <input name="confirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Repite la contraseña" required>
+        </label>
+        <div class="dialog-actions">
+          <button class="secondary-button" type="button" data-close-dialog="new-admin-dialog">Cancelar</button>
+          <button class="primary-button" type="submit">Crear administrador</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="product-dialog" id="password-dialog">
+      <form id="password-form">
+        <div class="dialog-heading">
+          <div><span class="eyebrow">Seguridad</span><h2 id="password-dialog-title">Cambiar contraseña</h2></div>
+          <button class="dialog-close" type="button" data-close-dialog="password-dialog" aria-label="Cerrar">×</button>
+        </div>
+        <label class="field">Nueva contraseña
+          <input name="password" type="password" minlength="8" autocomplete="new-password" placeholder="Mínimo 8 caracteres" required>
+        </label>
+        <label class="field">Confirmar contraseña
+          <input name="confirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Repite la contraseña" required>
+        </label>
+        <div class="dialog-actions">
+          <button class="secondary-button" type="button" data-close-dialog="password-dialog">Cancelar</button>
+          <button class="primary-button" type="submit">Guardar contraseña</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="admin-toast" id="admin-toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff9f5">
+    <meta name="description" content="Mini donas frescas, bonitas y llenas de sabor. Preparadas cada día para celebrar tus momentos más dulces.">
+    <title>Paula's Mini Donas — Pequeñas en tamaño, grandes en antojo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Paula's Mini Donas, inicio">
+        <img class="brand__logo" src="img/logo.jpeg" alt="Paula's Mini Donas">
+        <span class="brand__wordmark"><strong>Paula's</strong><small>MINI DONAS</small></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a class="main-nav__link is-active" href="#catalogo">Catálogo</a>
+        <a class="main-nav__link" href="#historia">Nuestra historia</a>
+        <a class="main-nav__link" href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="account-button" href="#contacto" aria-label="Contacto">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="9" r="3"></circle><path d="M6.7 18a6 6 0 0 1 10.6 0"></path></svg>
+        </a>
+        <button class="cart-button" type="button" data-open-cart aria-label="Mi pedido, 0 productos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8Z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path><path d="M9 12v1"></path></svg>
+          <span class="cart-button__label">Mi pedido</span>
+          <span class="cart-count" aria-live="polite" hidden>0</span>
+        </button>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero section-wrap" id="inicio">
+        <div class="hero__copy">
+          <span class="eyebrow eyebrow--pill"><span aria-hidden="true">✧</span> Hechas a mano, con mucho amor</span>
+          <h1>Pequeñas en tamaño.<br><em>Grandes en antojo.</em></h1>
+          <p>Mini donas frescas, bonitas y llenas de sabor. Preparadas cada día para celebrar tus momentos más dulces.</p>
+          <div class="hero__actions">
+            <a class="button button--pink" href="#catalogo">Ver sabores <span aria-hidden="true">↓</span></a>
+            <div class="social-proof" aria-label="Más de 200 antojos felices">
+              <span class="social-proof__donuts" aria-hidden="true"><i>🍩</i><i>🍩</i><i>🍩</i></span>
+              <span>Más de <strong>200 antojos felices</strong></span>
+            </div>
+          </div>
+          <div class="hero__promises">
+            <span><b aria-hidden="true">✓</b> Ingredientes frescos</span>
+            <span><b aria-hidden="true">✓</b> Preparación del día</span>
+          </div>
+        </div>
+        <a class="hero__visual hero__catalog-link" href="CATALOGO%20PAULA%E2%80%99S%20MINI%20DONAS%20(1).pdf" target="_blank" rel="noopener" aria-label="Abrir catálogo de mini donas en PDF en una nueva pestaña">
+          <div class="hero__image-frame">
+            <img src="img/WhatsApp Image 2026-11-16 at 19.43.24 (1).jpeg" alt="Caja de mini donas decoradas">
+          </div>
+          <div class="craft-badge"><strong>100%</strong><span>ARTESANALES</span></div>
+          <div class="hero-note"><span>♡</span> Un detalle dulce<br>para compartir</div>
+        </a>
+      </section>
+
+      <section class="catalog section-wrap" id="catalogo">
+        <div class="catalog__heading">
+          <div class="catalog__intro">
+            <span class="eyebrow">Nuestro menú</span>
+            <h2>Elige tu<br>favorita</h2>
+            <p>Todas nuestras cajitas incluyen 6 mini donas recién preparadas.</p>
+          </div>
+          <div class="filter-list" role="group" aria-label="Filtrar donas por sabor">
+            <button class="filter-chip is-selected" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+            <button class="filter-chip" type="button" data-filter="fresa" aria-pressed="false">Fresa</button>
+            <button class="filter-chip" type="button" data-filter="surtida" aria-pressed="false">Surtida</button>
+            <button class="filter-chip" type="button" data-filter="vainilla" aria-pressed="false">Vainilla</button>
+            <button class="filter-chip" type="button" data-filter="chocolate" aria-pressed="false">Chocolate</button>
+          </div>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="story" id="historia">
+        <div class="story__photo">
+          <img src="img/WhatsApp Image 2026-11-16 at 19.43.24.jpeg" alt="Caja de mini donas artesanales">
+          <div class="story__stamp"><strong>Horneado</strong><span>con cariño, siempre.</span></div>
+        </div>
+        <div class="story__copy">
+          <span class="eyebrow">La historia de Paula</span>
+          <h2>Un pequeño sueño<br>que sabe delicioso.</h2>
+          <p>Empezamos en una cocina familiar, mezclando recetas, colores y mucha ilusión. Hoy cada cajita sigue haciéndose en pequeños lotes, cuidando cada detalle para que recibas algo realmente especial.</p>
+          <div class="story__stats">
+            <div><strong>6</strong><span>por cajita</span></div>
+            <div><strong>100%</strong><span>artesanal</span></div>
+            <div><strong>24h</strong><span>más frescas</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="checkout-page" id="pedido" aria-labelledby="checkout-title" hidden>
+        <a class="checkout-back" href="#catalogo" data-continue>← <span>Seguir comprando</span></a>
+        <div class="checkout-heading">
+          <span class="eyebrow">Finaliza tu compra</span>
+          <h1 id="checkout-title">Tu pedido dulce</h1>
+        </div>
+
+        <div class="checkout-empty" id="checkout-empty">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 7h5l5 25h23l5-18H13"></path><circle cx="19" cy="39" r="2.5"></circle><circle cx="35" cy="39" r="2.5"></circle></svg>
+          <h2>Tu carrito está vacío</h2>
+          <p>Elige una cajita y vuelve por aquí.</p>
+          <a class="button button--pink" href="#catalogo" data-continue>Explorar sabores</a>
+        </div>
+
+        <div class="checkout-layout" id="checkout-layout" hidden>
+          <div class="checkout-main">
+            <div class="checkout-items" id="checkout-items" aria-live="polite"></div>
+            <form class="checkout-form" id="checkout-form">
+              <section class="checkout-step" aria-labelledby="delivery-title">
+                <h2 id="delivery-title"><span class="step-number">1</span> Datos de entrega</h2>
+                <div class="form-grid">
+                  <label class="form-field form-field--wide">Nombre completo
+                    <input name="name" autocomplete="name" placeholder="Tu nombre y apellido" required>
+                  </label>
+                  <label class="form-field">Teléfono
+                    <input name="phone" type="tel" autocomplete="tel" placeholder="+57 300 000 0000" required>
+                  </label>
+                  <label class="form-field">Correo electrónico
+                    <input name="email" type="email" autocomplete="email" placeholder="hola@email.com">
+                  </label>
+                  <label class="form-field form-field--wide">Dirección de envío
+                    <input name="address" autocomplete="street-address" placeholder="Calle, número, barrio" required>
+                  </label>
+                </div>
+              </section>
+
+              <fieldset class="checkout-step payment-step">
+                <legend><span class="step-number">2</span> Método de pago</legend>
+                <label class="payment-option is-selected">
+                  <input type="radio" name="payment" value="Transferencia" checked>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h3"></path></svg>
+                  <span>Transferencia</span><span class="payment-check" aria-hidden="true">✓</span>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="Efectivo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v12H3zM3 11h18M7 15h3"></path></svg>
+                  <span>Efectivo</span><span class="payment-check" aria-hidden="true">✓</span>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="Tarjeta al recibir">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg>
+                  <span>Tarjeta al recibir</span><span class="payment-check" aria-hidden="true">✓</span>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="payment" value="Tarjeta (simulación)">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h3"></path></svg>
+                  <span class="payment-option__copy">Tarjeta (simulación)<small>No se realiza ningún cobro real</small></span>
+                  <span class="payment-check" aria-hidden="true">✓</span>
+                </label>
+              </fieldset>
+            </form>
+          </div>
+
+          <aside class="order-summary" aria-labelledby="summary-title">
+            <h2 id="summary-title">Resumen</h2>
+            <div class="summary-row"><span>Subtotal</span><strong id="summary-subtotal">$ 0</strong></div>
+            <div class="summary-row"><span>Envío</span><strong id="summary-shipping">$ 6.000</strong></div>
+            <p class="shipping-message" id="shipping-message"></p>
+            <div class="summary-total"><span>Total</span><strong id="summary-total">$ 0</strong></div>
+            <button class="button button--pink confirm-button" type="submit" form="checkout-form">Confirmar pedido</button>
+            <p class="summary-note">Al confirmar, te contactaremos para coordinar la entrega.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="payment-simulation-dialog" id="payment-simulation-dialog" aria-labelledby="simulation-title">
+      <section class="simulation-choice" id="simulation-choice">
+        <button class="simulation-close" type="button" data-close-simulation aria-label="Cerrar">×</button>
+        <span class="eyebrow">Modo académico</span>
+        <h2 id="simulation-title">Pasarela de pago simulada</h2>
+        <p class="simulation-total">Total de prueba: <strong id="simulation-total">$ 0</strong></p>
+        <p class="simulation-disclaimer">Elige el resultado para probar el flujo. No se solicitan datos bancarios ni se procesa dinero real.</p>
+        <div class="simulation-actions">
+          <button class="button button--pink" type="button" data-simulation-result="approved">Simular pago aprobado</button>
+          <button class="button simulation-reject" type="button" data-simulation-result="declined">Simular pago rechazado</button>
+        </div>
+        <button class="simulation-cancel" type="button" data-close-simulation>Volver al pedido</button>
+      </section>
+      <section class="simulation-outcome" id="simulation-outcome" aria-live="polite" hidden>
+        <span class="simulation-outcome__icon" id="simulation-outcome-icon" aria-hidden="true"></span>
+        <h2 id="simulation-outcome-title"></h2>
+        <p id="simulation-outcome-message"></p>
+        <button class="button button--pink" type="button" id="simulation-finish">Volver al pedido</button>
+      </section>
+    </dialog>
+
+    <footer class="site-footer" id="contacto">
+      <div class="footer__about">
+        <a class="brand brand--footer" href="#inicio" aria-label="Paula's Mini Donas, inicio">
+          <img class="brand__logo" src="img/logo.jpeg" alt="Paula's Mini Donas">
+          <span class="brand__wordmark"><strong>Paula's</strong><small>MINI DONAS</small></span>
+        </a>
+        <p>Mini donas frescas, bonitas y llenas de sabor, hechas especialmente para ti.</p>
+        <a class="admin-access" href="admin.html">Acceso administrador</a>
+      </div>
+      <div class="footer__column">
+        <h3>Pedidos</h3>
+        <p>Lun — Sáb · 9:00 a. m. a 6:00 p. m.</p>
+        <a href="https://wa.me/573001234567">WhatsApp: +57 300 123 4567</a>
+      </div>
+      <div class="footer__column">
+        <h3>Entrega</h3>
+        <p>Envíos locales y opción de recoger.</p>
+        <a href="mailto:hola@paulasminidonas.com">Escríbenos para tu pedido</a>
+      </div>
+      <p class="footer__copyright">© <span id="year"></span> Paula's Mini Donas. Hecho con cariño.</p>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
