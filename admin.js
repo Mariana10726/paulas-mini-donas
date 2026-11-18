@@ -21,10 +21,10 @@ const statusNames = {
   cancelled: "Cancelado"
 };
 const defaultProducts = [
-  { id: "fresa", name: "Fresa Coqueta", category: "fresa", description: "Glaseado de fresa, lluvia de colores y un toque de vainilla.", price: 14000, tag: "Fresa", image: productImages.fresa, available: true },
-  { id: "fiesta", name: "Fiesta de Sabores", category: "surtida", description: "Una cajita variada para probar nuestros favoritos de la casa.", price: 18000, tag: "Surtida", image: productImages.surtida, available: true },
-  { id: "vainilla", name: "Dulce Arcoíris", category: "vainilla", description: "Crema suave de vainilla, fruta fresca y flores comestibles.", price: 16000, tag: "Vainilla", image: productImages.vainilla, available: true },
-  { id: "chocolate", name: "Choco Chispas", category: "chocolate", description: "Baño de chocolate, chispitas crujientes y mucho cariño.", price: 16000, tag: "Chocolate", image: productImages.chocolate, available: true }
+  { id: "fresa", name: "Brocheta x3", category: "fresa", description: "Glaseado de fresa, lluvia de colores y un toque de vainilla.", price: 4000, tag: "Fresa", image: productImages.fresa, available: true },
+  { id: "fiesta", name: "Caja x9", category: "surtida", description: "Una cajita variada para probar nuestros favoritos de la casa.", price: 18000, tag: "Surtida", image: productImages.surtida, available: true },
+  { id: "vainilla", name: "Caja x12", category: "vainilla", description: "Crema suave de vainilla, fruta fresca y flores comestibles.", price: 24000, tag: "Vainilla", image: productImages.vainilla, available: true },
+  { id: "chocolate", name: "individual", category: "chocolate", description: "Baño de chocolate, chispitas crujientes y mucho cariño.", price: 1200, tag: "Chocolate", image: productImages.chocolate, available: true }
 ];
 const initialAdmin = { id: "admin-paula", username: "paula", password: "admin123" };
 const loginScreen = document.querySelector("#login-screen");

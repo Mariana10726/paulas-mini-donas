@@ -1,4 +1,4 @@
-const whatsappNumber = "573001234567";
+const whatsappNumber = "573138209464";
 const deliveryFee = 6000;
 const freeDeliveryThreshold = 50000;
 const productStorageKey = "paulas-minidonas-products";
@@ -6,10 +6,10 @@ const orderStorageKey = "paulas-minidonas-orders";
 const productCategories = ["fresa", "surtida", "vainilla", "chocolate"];
 
 const defaultProducts = [
-  { id: "fresa", name: "Fresa Coqueta", category: "fresa", description: "Glaseado de fresa, lluvia de colores y un toque de vainilla.", price: 14000, tag: "Fresa", image: "img/WhatsApp Image 2026-11-16 at 19.43.25.jpeg", available: true },
-  { id: "fiesta", name: "Fiesta de Sabores", category: "surtida", description: "Una cajita variada para probar nuestros favoritos de la casa.", price: 18000, tag: "Surtida", image: "img/WhatsApp Image 2026-11-16 at 19.43.24.jpeg", available: true },
-  { id: "vainilla", name: "Dulce Arcoíris", category: "vainilla", description: "Crema suave de vainilla, fruta fresca y flores comestibles.", price: 16000, tag: "Vainilla", image: "img/WhatsApp Image 2026-11-16 at 19.43.24 (1).jpeg", available: true },
-  { id: "chocolate", name: "Choco Chispas", category: "chocolate", description: "Baño de chocolate, chispitas crujientes y mucho cariño.", price: 16000, tag: "Chocolate", image: "img/WhatsApp Image 2026-11-16 at 19.43.24 (2).jpeg", available: true }
+  { id: "fresa", name: "Brocheta x3", price: 4000,  image: "img/brocheta.jpeg", available: true },
+  { id: "fiesta", name: "Caja x9",  price: 18000,  image: "img/cajax9.jpeg", available: true },
+  { id: "vainilla", name: "Caja x12", price: 24000, image: "img/WhatsApp Image 2026-11-16 at 19.43.24 (2).jpeg", available: true },
+  { id: "chocolate", name: "individual", price: 1200,  image: "img/WhatsApp Image 2026-11-17 at 3.03.35.jpeg", available: true }
 ];
 
 function loadProducts() {
@@ -326,7 +326,7 @@ document.querySelectorAll("[data-continue]").forEach((link) => {
   link.addEventListener("click", hideCheckout);
 });
 
-document.querySelectorAll(".main-nav a, .brand[href]").forEach((link) => {
+document.querySelectorAll(".main-nav a, .brand[href ]").forEach((link) => {
   link.addEventListener("click", hideCheckout);
 });
 
